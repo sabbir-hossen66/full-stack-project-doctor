@@ -8,7 +8,7 @@ import Service from './Service';
 const AvailableAppointments = ({ date }) => {
     const [treatment, setTreatment] = useState(null);
     const formattedDate = format(date, 'PP')
-    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`http://localhost:5000/available?date=${formattedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://damp-shelf-37464.herokuapp.com/available?date=${formattedDate}`)
         .then(res => res.json())
 
     )
